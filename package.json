@@ -1,0 +1,35 @@
+{
+  "name": "rumindium-image",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*", "apps/*", "workers/*"],
+  "scripts": {
+    "dev": "bun run --parallel dev:web dev:api",
+    "dev:web": "bun run --filter @ri/web dev",
+    "dev:api": "bun run --filter @ri/api dev",
+    "dev:worker": "bun run --filter @ri/worker-ai dev",
+    "build": "bun run --filter @ri/web build",
+    "start": "bun run build && bun run --parallel start:web start:api",
+    "start:web": "bun run --filter @ri/web start",
+    "start:api": "bun run --filter @ri/api start",
+    "typecheck": "tsc -p tsconfig.json --pretty false && tsc -p apps/web/tsconfig.json --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "bun test",
+    "fixtures": "bun run scripts/dev/make-fixtures.ts",
+    "fixtures:check": "bun test scripts/dev/fixtures.test.ts scripts/dev/metadata.test.ts",
+    "models:fetch": "bun run scripts/dev/fetch-models.ts",
+    "boundaries": "bun run scripts/ci/check-boundaries.ts",
+    "doc:parity": "bun run scripts/ci/doc-parity.ts",
+    "model:licenses": "bun run scripts/ci/model-licenses.ts",
+    "secrets:check": "bun run scripts/ci/secrets-check.ts",
+    "db:migrate": "bun run scripts/ops/migrate.ts",
+    "ops:preflight": "bun run scripts/ops/preflight.ts",
+    "ops:sweep": "bun run scripts/ops/sweep.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.3.5",
+    "typescript": "^5.9.2"
+  }
+}

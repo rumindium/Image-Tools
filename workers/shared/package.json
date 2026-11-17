@@ -1,0 +1,15 @@
+{
+  "name": "@ri/worker-shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@ri/contracts": "workspace:*",
+    "@ri/image-core": "workspace:*",
+    "zod": "^3.25.76"
+  }
+}

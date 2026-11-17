@@ -1,0 +1,49 @@
+/*
+ * Design tokens — docs/0-UI-DESIGN.md §1.1.
+ * One source of truth: components use Tailwind classes mapped to these variables, never hex values.
+ */
+
+:root {
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --surface-3: #eceef2;
+  --border: #dfe3e9;
+  --text: #15181d;
+  --text-muted: #5b6472;
+  --accent: #4f46e5;
+  --accent-contrast: #ffffff;
+  --success: #0f7b4f;
+  --warn: #a05a00;
+  --danger: #b42318;
+  --checker-a: #e9ecf1;
+  --checker-b: #ffffff;
+  --radius: 10px;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 6%), 0 4px 12px rgb(16 24 40 / 6%);
+}
+
+.dark {
+  --surface: #0b0d10;
+  --surface-2: #12151a;
+  --surface-3: #1a1f26;
+  --border: #262c35;
+  --text: #e8ecf1;
+  --text-muted: #98a2b1;
+  --accent: #7c78ff;
+  --accent-contrast: #0b0d10;
+  --success: #3ddc97;
+  --warn: #f5b544;
+  --danger: #ff6b5e;
+  --checker-a: #1a1f26;
+  --checker-b: #232a33;
+  --shadow-card: none;
+}
+
+.checkerboard {
+  background-image: linear-gradient(45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--checker-a) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--checker-a) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--checker-a) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: var(--checker-b);
+}

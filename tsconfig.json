@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["bun"],
+    "paths": {
+      "@ri/contracts": ["./packages/contracts/src/index.ts"],
+      "@ri/image-core": ["./packages/image-core/src/index.ts"],
+      "@ri/image-browser": ["./packages/image-browser/src/index.ts"],
+      "@ri/presets": ["./packages/presets/src/index.ts"],
+      "@ri/ui": ["./packages/ui/src/index.ts"]
+    }
+  },
+  "include": [
+    "packages/*/src/**/*.ts",
+    "packages/*/src/**/*.tsx",
+    "apps/api/**/*.ts",
+    "workers/**/*.ts",
+    "scripts/**/*.ts",
+    "e2e/**/*.ts"
+  ],
+  "exclude": ["node_modules", "**/.next/**", "apps/web"]
+}

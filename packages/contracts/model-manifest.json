@@ -1,0 +1,5 @@
+{
+  "$comment": "Pinned AI models (docs/0-AI-MODELS.md §3). Empty until a model passes the license audit: every entry needs spdx, upstream, commercialUse and sha256.",
+  "manifestVersion": "2026-11-16",
+  "models": []
+}

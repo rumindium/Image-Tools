@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.3
+
+      - name: install
+        run: bun install --frozen-lockfile
+
+      - name: typecheck
+        run: bun run typecheck
+
+      - name: lint
+        run: bun run lint
+
+      - name: unit tests
+        run: bun run test
+
+      - name: import boundaries
+        run: bun run boundaries
+
+      - name: doc parity
+        run: bun run doc:parity
+
+      - name: model license gate
+        run: bun run model:licenses
+
+      - name: secrets check
+        run: bun run secrets:check
+
+      - name: build web
+        run: bun run build

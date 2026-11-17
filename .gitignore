@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+.bun/
+
+# build output
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# env & secrets
+.env
+.env.*
+!.env.example
+
+# models (large; added by hand once the license gate in docs/0-AI-MODELS.md §2 passes)
+models/
+
+# local state
+.freebuff/
+.DS_Store
+*.log
+
+# test output
+e2e/artifacts/
+e2e/fixtures/generated/
+coverage/

@@ -1,0 +1,32 @@
+{
+  "name": "@ri/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 4400",
+    "build": "next build",
+    "start": "next start --port 4400",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ri/contracts": "workspace:*",
+    "@ri/image-browser": "workspace:*",
+    "@ri/image-core": "workspace:*",
+    "@ri/presets": "workspace:*",
+    "@ri/ui": "workspace:*",
+    "exifr": "^7.1.3",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
